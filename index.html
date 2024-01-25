@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+    }
+    h1, h2, p {
+      text-align: center;
+    }
+    .story-container {
+      max-width: 800px;
+      margin: auto;
+    }
+    .options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  <title>Civil Rights Movement Story</title>
+</head>
+<body>
+  <div class="story-container">
+    <h1>Civil Rights Movement Story</h1>
+    <div id="content">
+      <!-- Initial content goes here -->
+      <h2>Plessy v. Ferguson</h2>
+      <p>
+        Plessy v. Ferguson was a pivotal United States Supreme Court case that took place in 1896...
+      </p>
+      <div class="options">
+        <button onclick="showBrownVsBoard()">Next: Brown v. Board of Education</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showBrownVsBoard() {
+      document.getElementById('content').innerHTML = `
+        <h2>Brown v. Board of Education</h2>
+        <p>
+          Brown v. Board of Education stands as a watershed moment in American legal history and the struggle for civil rights...
+        </p>
+        <div class="options">
+          <button onclick="showThurgoodMarshall()">Next: Thurgood Marshall</button>
+          <button onclick="showPlessy()">Previous: Plessy v. Ferguson</button>
+        </div>
+      `;
+    }
+
+    function showThurgoodMarshall() {
+      document.getElementById('content').innerHTML = `
+        <h2>Thurgood Marshall</h2>
+        <p>
+          Thurgood Marshall was a lawyer who played a crucial role in challenging the legality of segregation...
+        </p>
+        <div class="options">
+          <button onclick="showLittleRockNine()">Next: Little Rock Nine</button>
+          <button onclick="showBrownVsBoard()">Previous: Brown v. Board of Education</button>
+        </div>
+      `;
+    }
+
+    function showLittleRockNine() {
+      document.getElementById('content').innerHTML = `
+        <h2>Little Rock Nine</h2>
+        <p>
+          The Little Rock Nine refers to a group of courageous African American students who played a pivotal role in the desegregation of public schools...
+        </p>
+        <div class="options">
+          <button onclick="showThurgoodMarshall()">Previous: Thurgood Marshall</button>
+        </div>
+      `;
+    }
+
+    function showPlessy() {
+      document.getElementById('content').innerHTML = `
+        <h2>Plessy v. Ferguson</h2>
+        <p>
+          Plessy v. Ferguson was a pivotal United States Supreme Court case that took place in 1896...
+        </p>
+        <div class="options">
+          <button onclick="showBrownVsBoard()">Next: Brown v. Board of Education</button>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
